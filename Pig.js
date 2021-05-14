@@ -8,6 +8,16 @@ class Pig extends BaseClass {
 
   }
 
+  score() {
+    
+    if (this.visibility < 0 && this.visibility > -1000) {
+
+      score++;
+
+    }
+
+  }
+
   display() {
 
     if (this.body.speed < 2.5) {
