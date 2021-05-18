@@ -109,6 +109,9 @@ function keyPressed(){
 
     if(keyCode === 32){
 
+        console.log("if");
+
+        bird.trajectory = [];
         Matter.Body.setPosition(bird.body, {x: 200, y:50});
         slingshot.reAttach(bird.body);
         gameState = "onSling";

@@ -10,7 +10,7 @@ class Pig extends BaseClass {
 
   score() {
     
-    if (this.visibility < 0 && this.visibility > -1000) {
+    if (this.visibility < 0 && this.visibility > -26) {
 
       score++;
 
