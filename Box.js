@@ -1,7 +1,40 @@
-class Box extends BaseClass {
-  constructor(x, y, width, height){
-    super(x,y,width,height);
-    this.image = loadImage("sprites/wood1.png");
-  }
+class Box {
 
-};
+    constructor(x,y,width,height) {
+
+        var opt = {
+
+            'restitution': 0.8,
+            'friction': 1.0,
+            'density': 0.04
+
+        }
+
+        this.body = Bodies.rectangle(x, y, width, height, opt);
+        this.width = width;
+        this.height = height;
+        this.color = color(random(0, 255), random(0, 255), random(0, 255));
+        World.add(world, this.body);
+
+    }
+
+    display() {
+
+        var pos = this.body.position;
+        var angle = this.body.angle;
+
+        push();
+
+        translate(pos.x, pos.y);
+        rotate(angle);
+        strokeWeight(4);
+        stroke('black');
+        fill(this.color);
+        rectMode(CENTER);
+        rect(0, 0, this.width, this.height);
+
+        pop();
+
+    }
+
+}
